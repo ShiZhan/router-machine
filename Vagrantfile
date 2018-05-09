@@ -16,16 +16,13 @@ Vagrant.configure("2") do |config|
     rm.vm.hostname = "router-machine"
     rm.vm.network "public_network", ip: "192.168.137.127", :netmask => "255.255.255.0"#, :bridge => '<physical host interface>'
     rm.vm.synced_folder "#{home_folder}", "/vagrant_data", create: true, owner: "root", group: "root"
-    rm.vm.provision "file", source: "conf/", destination: "/home/vagrant/conf"
     rm.vm.provision "shell", inline: <<-SHELL
       echo "Router machine based on ubuntu-xenial vagrant box" > /etc/motd
       echo #{ssh_key_pub} >> /home/vagrant/.ssh/authorized_keys
-      apt-get update -q && apt-get install dnsmasq
-      cp /home/vagrant/conf/hosts-local /etc/hosts-local
-      mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
-      cp /home/vagrant/conf/dnsmasq.conf /etc/dnsmasq.conf
-      service dnsmasq restart
-      source /home/vagrant/conf/update-iptables.sh
     SHELL
+    rm.vm.provision "file", source: "conf/", destination: "/home/vagrant/conf"
+	rm.vm.provision "shell" do |s|
+	  s.path = "provision.sh"
+	end
   end
 end
