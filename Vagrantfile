@@ -21,8 +21,8 @@ Vagrant.configure("2") do |config|
       echo #{ssh_key_pub} >> /home/vagrant/.ssh/authorized_keys
     SHELL
     rm.vm.provision "file", source: "conf/", destination: "/home/vagrant/conf"
-	rm.vm.provision "shell" do |s|
-	  s.path = "provision.sh"
-	end
+    rm.vm.provision "shell" do |s|
+      s.path = "provision.sh"
+    end
   end
 end
