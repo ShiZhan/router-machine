@@ -1,4 +1,5 @@
 #!/bin/bash
+echo 1 > /proc/sys/net/ipv4/ip_forward
 /sbin/iptables --policy INPUT   ACCEPT
 /sbin/iptables --policy OUTPUT  ACCEPT
 /sbin/iptables --policy FORWARD ACCEPT

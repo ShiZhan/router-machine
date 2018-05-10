@@ -5,7 +5,7 @@ apt-get update && apt-get install -y iptables dnsmasq
 
 source /home/vagrant/conf/update-iptables.sh
 cp /home/vagrant/conf/update-iptables.sh /etc/network/if-up.d/update-iptables.sh
-service network restart
+chmod +x /etc/network/if-up.d/update-iptables.sh
 
 cp /home/vagrant/conf/hosts-local /etc/hosts-local
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
