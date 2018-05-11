@@ -5,7 +5,7 @@ apt-get update && apt-get install -y iptables iptables-persistent dnsmasq
 
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 source /home/vagrant/conf/update-iptables.sh
-service iptables-persistent save
+service netfilter-persistent save
 
 cp /home/vagrant/conf/hosts-local /etc/hosts-local
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
