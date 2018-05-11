@@ -1,12 +1,10 @@
 # Introduction
 
-Homebrew router-machine, alternative Router Toolkit for Windows Internet Sharing (NAT).
+Portable router-machine, alternate Router Toolkit for Windows Internet Sharing (Non-Linux NAT) etc., can be easily managed through vagrant.
 
-Based on [ubuntu-xenial-docker](https://app.vagrantup.com/envimation/boxes/ubuntu-xenial-docker)
+Based on [ubuntu-xenial](https://app.vagrantup.com/envimation/boxes/ubuntu-xenial)
 
-Use ssh-keygen to prepare or refresh insecure key pair before launch.
-
-To specify a bridged network adapter for LAN hosts, uncomment ':bridge' and fill in the blank named 'physical host interface'.
+To specify a bridged network adapter for LAN, bypass manual selection, uncomment ':bridge' and fill in the blank named 'physical host interface'.
 
 ## How to obtain the list of available network interfaces
 
