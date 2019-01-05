@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "rm" do |rm|
     # base image
     rm.vm.box = "envimation/ubuntu-xenial"
-    rm.vm.box_version = "1.0.3-1505697275"
+    rm.vm.box_version = "1.0.3-1516241473"
     rm.vm.box_check_update = false
 
     # virtual hardware definition
