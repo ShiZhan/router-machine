@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
 
     # network
     rm.vm.hostname = "router-machine"
-    rm.vm.network "public_network", ip: "192.168.137.127", :netmask => "255.255.255.0"#, :bridge => '<physical host interface>'
+    rm.vm.network "public_network", ip: "192.168.168.127", :netmask => "255.255.255.0"#, :bridge => '<physical host interface>'
 
     # sync folder
     rm.vm.synced_folder "#{home_folder}", "/vagrant_data", create: true, owner: "root", group: "root"
